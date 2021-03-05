@@ -1,4 +1,4 @@
-div.ranking {
+body div.ranking {
   .mainsphinx table.docutils {
     margin-top: 0;
     margin-bottom: 0;
@@ -29,24 +29,16 @@ div.ranking {
     }
 
     tbody {
-      // Ensure background colors of fixed columns match after sorting
-      tr:nth-child(odd) > td {
-        background-color: #E8E8E8 !important;
-      }
-      tr:nth-child(even) > td {
-        background-color: #F8F8F8 !important;
-      }
-
       tr.highlight td {
-        background-color: #deffcc !important;
+        background-color: var(--bg-table-highlight-color);
       }
     }
 
     tfoot > tr {
-      background-color: #ede !important;
+      background-color: var(--bg-table-highlight-color);
       & > td {
-        padding: 1px .5em 1px .5em !important;
-        border-bottom: none !important;
+        padding: 1px .5em 1px .5em;
+        border-bottom: none;
       }
     }
   }

@@ -4,11 +4,13 @@ const SATORI_URL_HTTPS = 'https://' + SATORI_URL;
 const PROBLEM_URL_REGEX =
     /https:\/\/satori\.tcs\.uj\.edu\.pl\/contest\/(\d+)\//;
 
+const CHOSEN_THEME_KEY = 'chosenTheme';
 const CHOSEN_LOGO_PRIMARY_KEY = 'chosenLogo_primary';
 const CHOSEN_LOGO_SECONDARY_KEY = 'chosenLogo_secondary';
 const HIGHLIGHT_JS_STYLE_KEY = 'highlightJsStyle';
 
 const DEFAULT_SETTINGS = {
+    [CHOSEN_THEME_KEY]: 'satori',
     [CHOSEN_LOGO_PRIMARY_KEY]: 'satoriPremium',
     [CHOSEN_LOGO_SECONDARY_KEY]: 'tcs',
     [HIGHLIGHT_JS_STYLE_KEY]: 'atom-one-light'
@@ -42,6 +44,7 @@ if (typeof module !== 'undefined') {
         SATORI_URL_HTTPS,
         PROBLEM_URL_REGEX,
 
+        CHOSEN_THEME_KEY,
         CHOSEN_LOGO_PRIMARY_KEY,
         CHOSEN_LOGO_SECONDARY_KEY,
         HIGHLIGHT_JS_STYLE_KEY,

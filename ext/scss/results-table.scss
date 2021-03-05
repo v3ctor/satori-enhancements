@@ -1,0 +1,96 @@
+body {
+  table.results {
+    color: var(--table-color);
+
+    tr {
+      &:nth-child(2n) {
+        background-color: var(--bg-table-even-color);
+      }
+  
+      &:nth-child(2n+1) {
+        background-color: var(--bg-table-odd-color);
+      }  
+
+      th {
+        background-color: var(--bg-table-header-color);
+        color: var(--table-header-color);    
+      }  
+
+      td {
+        &.status {
+          color: var(--sta-color);
+        
+          div {
+            &.staOK {
+              background-color: var(--bg-sta-ok-color);
+            }
+            
+            &.staACC {
+              background-color: var(--bg-sta-acc-color);
+            }
+            
+            &.staINT {
+              background-color: var(--bg-sta-int-color);
+            }
+            
+            &.staRTE {
+              background-color: var(--bg-sta-rte-color);
+            }
+            
+            &.staTLE {
+              background-color: var(--bg-sta-tle-color);
+            }
+            
+            &.staANS {
+              background-color: var(--bg-sta-ans-color);
+            }
+            
+            &.staMEM {
+              background-color: var(--bg-sta-mem-color);
+            }
+            
+            &.staREJ {
+              background-color: var(--bg-sta-rej-color);
+            }
+            
+            &.staCME {
+              background-color: var(--bg-sta-cme-color);
+            }
+            
+            &.staQUE {
+              background-color: var(--bg-sta-que-color);
+            }
+          }
+        }
+
+        &.satori-enhancements-status-ok {
+          background-color: var(--bg-sta-ok-color);
+        }
+    
+        &.satori-enhancements-status-que {
+          background-color: var(--bg-sta-que-color);
+        }
+    
+        &.satori-enhancements-status-int {
+          background-color: var(--bg-sta-int-color);
+        }
+    
+        &.satori-enhancements-status-err {
+          background-color: var(--bg-sta-ans-color);
+        }  
+      }
+    }
+  }
+
+  div.wheel {
+    background-color: var(--bg-wheel-color);
+
+    .wheelitem {
+      color: var(--wheel-color);
+    }
+  
+    .wheelsel {
+      background-color: var(--bg-wheelsel-color);
+    }  
+  } 
+}

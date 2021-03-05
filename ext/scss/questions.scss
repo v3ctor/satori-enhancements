@@ -1,0 +1,22 @@
+body {
+  .question_public {
+    color: var(--question-color);
+
+    .question_header {
+      background-color: var(--bg-question-header-color);
+    }
+    
+    .question_content {
+      background-color: var(--bg-question-content-color);
+    }
+    
+    .question_answer {
+      background-color: var(--bg-question-answer-color);
+    }
+  }
+
+  #id_content {
+    background-color: var(--bg-input-color);
+    color: var(--input-color);
+  }
+}

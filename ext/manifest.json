@@ -59,12 +59,38 @@
       "matches": ["*://satori.tcs.uj.edu.pl/*"],
       "js": [
         "vendor/browser-polyfill.js",
-        "vendor/bower/jquery.min.js",
+        "js/themes.js",
         "js/config.js",
+        "js/theme-injector.js"
+      ],
+      "run_at": "document_start"
+    },
+    {
+      "matches": ["*://satori.tcs.uj.edu.pl/*"],
+      "js": [
+        "vendor/browser-polyfill.js",
+        "vendor/bower/jquery.min.js",
         "js/general.js"
       ],
       "run_at": "document_end",
       "css": ["css/general.css"]
+    },
+    {
+      "matches": ["*://satori.tcs.uj.edu.pl/contest/*/"],
+      "run_at": "document_end",
+      "css": ["css/docutils-table.css"]
+    },
+    {
+      "matches": [
+        "*://satori.tcs.uj.edu.pl/contest/*/backup*",
+        "*://satori.tcs.uj.edu.pl/contest/select*"
+      ],
+      "run_at": "document_end",
+      "css": ["css/results-table.css"]
+    },
+    {
+      "matches": ["*://satori.tcs.uj.edu.pl/contest/*/questions*"],
+      "css": ["css/questions.css"]
     },
     {
       "matches": ["*://satori.tcs.uj.edu.pl/contest/*/*"],
@@ -89,7 +115,8 @@
       "css" : [
         "vendor/bower/jquery.dataTables.min.css",
         "vendor/bower/fixedColumns.dataTables.min.css",
-        "css/ranking.css"
+        "css/ranking.css",
+        "css/docutils-table.css"
       ]
     },
     {
@@ -101,16 +128,24 @@
         "js/problems.js"
       ],
       "run_at": "document_end",
-      "css": ["css/problems.css"]
+      "css": [
+        "css/problems.css",
+        "css/results-table.css",
+        "css/docutils-table.css"
+      ]
     },
     {
-      "matches": ["*://satori.tcs.uj.edu.pl/contest/*/results"],
+      "matches": [
+        "*://satori.tcs.uj.edu.pl/contest/*/results",
+        "*://satori.tcs.uj.edu.pl/contest/*/results?*"
+      ],
       "js": [
         "vendor/browser-polyfill.js",
         "vendor/bower/jquery.min.js",
         "js/results-list.js"
       ],
-      "run_at": "document_end"
+      "run_at": "document_end",
+      "css": ["css/results-table.css"]
     },
     {
       "matches": ["*://satori.tcs.uj.edu.pl/contest/*/results/*"],
@@ -124,6 +159,8 @@
       "run_at": "document_end",
       "css": [
         "vendor/bower/7-three-bounce.css",
+        "css/results-table.css",
+        "css/docutils-table.css",
         "css/results.css"
       ]
     }

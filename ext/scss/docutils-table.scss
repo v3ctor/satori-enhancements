@@ -1,0 +1,25 @@
+body {
+  .mainsphinx table.docutils {
+    color: var(--table-color);
+  
+    tr {
+      &:nth-child(2n) {
+        background-color: var(--bg-table-even-color);
+  
+      }
+  
+      &:nth-child(2n+1) {
+        background-color: var(--bg-table-odd-color);
+      }
+  
+      th {
+        background-color: var(--bg-table-header-color);
+        color: var(--table-header-color);    
+      }
+    }
+  }
+  
+  .dataTables_wrapper .dataTables_info {
+    color: var(--color);
+  }
+}

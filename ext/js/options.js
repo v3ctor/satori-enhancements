@@ -2,12 +2,20 @@
     'use strict';
 
     let storage = browser.storage.sync || browser.storage.local;
+    const themeSelect = $('select#theme-chooser');
     let logoChoosers = {
         primary: $('input[name="primary-logo-chooser"]'),
         secondary: $('input[name="secondary-logo-chooser"]'),
     };
     let styleSelect = $('select#hjsstyle');
     let highlighterStylesheet;
+
+    function saveTheme() {
+        document.body.append(themeSelect.val());
+        storage.set({
+            [CHOSEN_THEME_KEY]: themeSelect.val()
+        });
+    }
 
     function saveLogo(chooserName) {
         storage.set({
@@ -18,7 +26,7 @@
 
     function restoreOptions() {
         storage.get(DEFAULT_SETTINGS).then(items => {
-            const {highlightJsStyle} = items;
+            const {chosenTheme, highlightJsStyle} = items;
             for (let chooserName in logoChoosers) {
                 let varName = `chosenLogo_${chooserName}`;
                 logoChoosers[chooserName]
@@ -26,12 +34,13 @@
                     .prop('checked', true);
             }
             styleSelect.val(highlightJsStyle);
-
+            themeSelect.val(chosenTheme);
             refreshHighlighterStylesheet();
         });
     }
 
     function addHighlightJsStyles() {
+        document.body.append(themeSelect.length);
         for (let style of HIGHLIGHT_JS_STYLES) {
             let option = $('<option>');
             option.attr('value', style);
@@ -76,6 +85,7 @@
     $(document).ready(addHighlightJsStyles);
     $(document).ready(restoreOptions);
 
+    themeSelect.change(saveTheme);
     for (let chooserName in logoChoosers) {
         logoChoosers[chooserName].click(() => saveLogo(chooserName));
     }

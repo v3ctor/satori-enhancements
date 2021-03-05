@@ -16,9 +16,62 @@ div#content {
   margin-top: -1em;
 }
 
+// html selector to increase specificity of the rule
+html body {
+  background-color: var(--bg-color);
+  color: var(--color);
+}
+
 // Body selector to increase specificity of the rule
-body .mainsphinx {
-  a, a:visited {
-    color: $link-color;
+body {
+  a {
+    color: var(--link-color) !important;
+    &:visited, &:active {
+      color: var(--link-color) !important;
+    }
+
+    &:hover {
+      color: var(--link-hover-color) !important;
+    }
+  }
+
+  input, select {
+    background-color: var(--bg-input-color);
+    color: var(--input-color);
+  }  
+
+  .button {
+    background-color: var(--bg-button-color);
+    --link-color: var(--button-color);
+    color: var(--button-color);
+ 
+    &:hover {
+      background-color: var(--bg-button-hover-color);
+      --link-hover-color: var(--button-hover-color);
+      color: var(--button-hover-color);
+    }
+  }
+
+  #header {
+    --link-color: var(--header-link-color);
+    background-color: var(--bg-header-color);
+    color: var(--header-color);
+    background-image: none;
+  }  
+
+  #navigationPanel li {
+    --link-color: var(--navitem-color);
+    color: var(--navitem-color);
+
+    &:hover {
+      --link-color: var(--navitem-hover-color);
+      color: var(--navitem-hover-color);  
+    }
+  } 
+
+  #footer,
+  .rDots,
+  .bDots {
+      border: none;
   }
 }
