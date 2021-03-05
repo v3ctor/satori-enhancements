@@ -11,7 +11,6 @@ function injectTheme() {
     [CHOSEN_THEME_KEY]: DEFAULT_SETTINGS[CHOSEN_THEME_KEY]
   }).then(response => {
     const themeName = response[CHOSEN_THEME_KEY];
-    console.log('theme', themeName);
     injectCSS(THEMES[themeName]);
   });
 }
